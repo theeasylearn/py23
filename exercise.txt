@@ -1,0 +1,74 @@
+exercises
+--------------------------------------
+1) find area of circle , square , reactangle 
+
+2)  # check a latter is vowel or consonent 
+    # vowel -> a,e,i,o,u
+
+3) check user entered correct username and passwrod or not
+    username = abc123
+    password = 123123
+
+4) Title: Scholarship Eligibility Based on Marks and Income
+    Ask the user for their academic percentage and family income.
+    If marks are above 90 and income is below 5L, give a full scholarship.
+    If marks are between 75-90 and income is between 5L-10L, give a 50% scholarship.
+    Otherwise, no scholarship is awarded.
+
+5) Title: Loan Approval Based on Salary and Credit Score
+    Ask the user for their monthly salary and credit score.
+    If salary is above 50K and credit score is above 750, approve the loan.
+    If salary is between 30K-50K and credit score is between 650-750, approve with conditions.
+    Otherwise, reject the loan application.
+
+6) print following pattern
+10 9 8 7...1
+
+1 3 5 7 9 .... 99  
+
+1 4 9 16 25... 100
+
+a b c d e...z
+
+7) 
+a
+a b
+a b c
+a b c d
+
+a b c d
+a b c
+a b
+a
+
+55555
+4444
+333
+22
+1
+
+1) https://jaro-website.s3.ap-south-1.amazonaws.com/2024/06/Pattern-Programs-in-C.jpg
+2) https://journaldev.nyc3.cdn.digitaloceanspaces.com/2019/01/pyramid-pattern-programs-in-java.png
+
+
+functions
+----------------------------------------------
+1) create function getVolume
+    it has 3 argument length, width, depth 
+    all arguments are optional default values are 1 
+    it should return volume 
+
+2) create function getSeconds that will return total seconds of given hours, minutes and seconds 
+    it has 3 argument hour, minutes, seconds 
+    all arguments are optional default values are 0 
+    it should return total seconds
+
+3) create function getInches that will return total Inches of given meter, foot, inches 
+    it has 3 argument meter, foot, inches 
+    all arguments are optional default values are 0 
+    it should return total inches 
+ 
+file
+--------------------------------------------------
+1)  # read data from one file and write to another file
+    # cut - paste

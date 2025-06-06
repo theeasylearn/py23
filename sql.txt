@@ -1,0 +1,107 @@
+create a table
+----------------------------
+create table table_name(
+    column
+)
+
+create table employee(
+    id int primary key auto_increment,
+    name varchar(50),
+    salary int,
+    mail varchar(30)
+)
+
+insert
+-add row to table
+------------------------------------------
+1) insert into table_name(column,...) values(value,...)
+INSERT INTO employee(name,salary,mail) VALUES("param patel",12333,"param@gmail.com")
+
+
+2) insert into table_name VALUES(value....)
+INSERT INTO employee VALUES('' ,"manthan",12222,"abc@gamil.com")
+
+INSERT INTO employee (name, salary, mail) VALUES
+("Param Patel", 12333, "param@gmail.com"),
+("Ravi Sharma", 15000, "ravi@gmail.com"),
+("Neha Verma", 18000, "neha@gmail.com"),
+("Amit Singh", 20000, "amit@gmail.com"),
+("Priya Desai", 17000, "priya@gmail.com"),
+("Karan Mehta", 22000, "karan@gmail.com"),
+("Sneha Joshi", 16000, "sneha@gmail.com"),
+("Vikas Nair", 19500, "vikas@gmail.com"),
+("Anjali Thakur", 17500, "anjali@gmail.com"),
+("Rahul Yadav", 21000, "rahul@gmail.com");
+
+
+update
+update a record
+
+update table_name set field = value... where condition
+UPDATE employee SET name='devarsh' WHERE id=1
+
+UPDATE employee SET name='manthan' WHERE salary>20000;
+
+UPDATE employees SET reportsTo=1000 WHERE officeCode=4 OR officeCode=5 or officeCode=6
+
+delete
+delete a record
+delete from table_name where condition
+DELETE FROM employees WHERE officeCode=7
+DELETE FROM employees WHERE quantityOrdered>25 AND priceEach<100
+
+select *|field from table_name 
+where condition 
+Group by 
+having
+order by
+limit
+
+fetch data from table
+
+select * from table_name where condition ascending | desending limit(0,2)
+SELECT * FROM orderdetails
+
+SELECT customerNumber as customers,amount as price FROM payments;
+
+SELECT paymentDate FROM payments WHERE amount>100000
+
+
+agregate function
+sum
+SELECT SUM(amount) as total FROM payments
+SELECT SUM(amount) FROM payments WHERE customerNumber=124
+
+count
+SELECT COUNT(customerNumber) FROM payments WHERE customerNumber=124
+SELECT COUNT(*) FROM employees WHERE officeCode=6
+
+SELECT COUNT(*) FROM payments WHERE paymentDate>='2005-01-01' AND paymentDate<='2005-12-31'
+
+
+min
+SELECT MIN(amount) FROM payments
+
+max
+SELECT MAX(amount) FROM payments
+
+avg
+SELECT AVG(amount) FROM payments
+
+
+SELECT * FROM products ORDER BY buyPrice DESC;
+SELECT * FROM products ORDER BY buyPrice;
+
+select highest prices product detail
+
+SELECT productName,productCode,buyPrice FROM products order BY buyPrice DESC LIMIT 0,3
+
+SELECT productName,productCode,buyPrice FROM products order BY buyPrice  LIMIT 0,3
+
+SELECT * FROM employees ORDER BY firstName DESC
+
+
+Group BY
+SELECT customerNumber,SUM(amount),COUNT(*) FROM payments GROUP BY customerNumber
+
+SELECT customerNumber,SUM(amount),COUNT(*) FROM payments GROUP BY customerNumber HAVING COUNT(*)>5
