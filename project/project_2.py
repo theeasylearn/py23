@@ -17,6 +17,7 @@ Features:
 - Mark books as borrowed or available
 - Search by title or author
 '''
+import connection 
 choice = None 
 while choice!=0:
     print("Press 1 to insert new book")
