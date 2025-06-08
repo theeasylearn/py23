@@ -20,6 +20,8 @@ except con.Error as e:
     
 #insert, update, delete, create table, drop table (never return data)   
 def runQuery(sql,data):
+    print(sql)
+    print(data)
     try:
         command = db.cursor()
         command.execute(sql,data)
@@ -34,16 +36,43 @@ def runQuery(sql,data):
         if e.errno == -1:
             print ("no of fields and no of arguments does not match")
         return False
-sql = "INSERT INTO `books` (`title`, `author`, `generation`, `year_published`, `status`) VALUES (%s,%s,%s,%s,%s)"
+#fetchrow method is used to execute select statement
+def fetchRow(sql,data=None):
+    print(sql)
+    try:
+        command = db.cursor()
+        if data==None:
+            command.execute(sql)
+        else:
+            print(data)
+            command.execute(sql,data)
+        return command.fetchall()
+    except con.Error as e:
+        print(e.errno)
+        if e.errno == 1146:
+            print ("table does not exist")
+        if e.errno == 1054:
+            print ("field name is not valid")
+        if e.errno == -1:
+            print ("no of fields and no of arguments does not match")
+        return None
+# sql = "select * from books";
+# print(fetchRow(sql))
 
-title = 'abc'
-author = 'xyz'
-generation = 'drama'
-year_published = 2000
-status = 'owned'
+# sql = "select * from books where id=%s"
+# data = [1]
+# print(fetchRow(sql,data))
 
-success = runQuery(sql,[title,author,generation,year_published,status])
-if success == False:
-    print('sql command failed')
-else:
-    print('sql command executed successfully')
+# sql = "INSERT INTO `books` (`title`, `author`, `generation`, `year_published`, `status`) VALUES (%s,%s,%s,%s,%s)"
+
+# title = 'abc'
+# author = 'xyz'
+# generation = 'drama'
+# year_published = 2000
+# status = 'owned'
+
+# success = runQuery(sql,[title,author,generation,year_published,status])
+# if success == False:
+#     print('sql command failed')
+# else:
+#     print('sql command executed successfully')
