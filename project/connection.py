@@ -56,23 +56,3 @@ def fetchRow(sql,data=None):
         if e.errno == -1:
             print ("no of fields and no of arguments does not match")
         return None
-# sql = "select * from books";
-# print(fetchRow(sql))
-
-# sql = "select * from books where id=%s"
-# data = [1]
-# print(fetchRow(sql,data))
-
-# sql = "INSERT INTO `books` (`title`, `author`, `generation`, `year_published`, `status`) VALUES (%s,%s,%s,%s,%s)"
-
-# title = 'abc'
-# author = 'xyz'
-# generation = 'drama'
-# year_published = 2000
-# status = 'owned'
-
-# success = runQuery(sql,[title,author,generation,year_published,status])
-# if success == False:
-#     print('sql command failed')
-# else:
-#     print('sql command executed successfully')
